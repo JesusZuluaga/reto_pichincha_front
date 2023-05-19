@@ -1,0 +1,34 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente  of clientes">
+            <td>{{ cliente.id }}</td>
+            <td>{{ cliente.persona.nombre }}</td>
+            <td>{{ cliente.persona.direccion | recortar }}</td>
+            <td>{{ cliente.persona.telefono | recortar}}</td>
+            <td>{{ cliente.password | recortar}}</td>
+            <td>{{ cliente.estado | recortar}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshTable()">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshTable()">
+        <option [ngValue]="2">2 items per page</option>
+        <option [ngValue]="4">4 items per page</option>
+        <option [ngValue]="6">6 items per page</option>
+    </select>
+</div>

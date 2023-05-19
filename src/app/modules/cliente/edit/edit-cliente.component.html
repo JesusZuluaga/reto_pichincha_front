@@ -1,0 +1,54 @@
+<section>
+    <h1>CREAR CLIENTE</h1>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div>
+            <label>Usuario</label>
+            <input type="text" id="usuario" formControlName="usuario" required>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password"  formControlName="password" required>
+        </div>
+        <div formGroupName="persona">
+            <div>
+                <label>Numero de Documento</label>
+                <input type="text" id="numeroDocumento"  formControlName="numeroDocumento" required>
+            </div>
+            <div>
+                <label>Tipo de documento</label>
+                <select type="text" id="tipoDocumento"  formControlName="tipoDocumento" required>
+                    <option value="Cedula Ciudadania">Cedula Ciudadania</option>
+                    <option value="Tarjeta Identidad">Tarjeta Identidad</option>
+                    <option value="Cedula Extranejeria">Cedula Extranejeria</option>
+                </select>
+            </div>
+            <div>
+                <label>Nombre</label>
+                <input type="text" id="nombre"  formControlName="nombre" required>
+            </div>
+            <div>
+                <label>Apellido</label>
+                <input type="text" id="apellido"  formControlName="apellido" required>
+            </div>
+            <div>
+                <label>Genero</label>
+                <select type="text" id="genero"  formControlName="genero" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
+            </div>
+            <div>
+                <label>direccion</label>
+                <input type="text" id="direccion"  formControlName="direccion" required>
+            </div>
+            <div>
+                <label>telefono</label>
+                <input type="text" id="telefono"  formControlName="telefono" required>
+            </div>
+            <div>
+                <button type="submit">Cancelar</button>
+                <button type="submit">Guardar</button>
+            </div>
+        </div>
+    </form>
+</section>
